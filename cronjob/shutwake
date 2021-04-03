@@ -1,0 +1,9 @@
+#!/bin/bash
+# Author: mr_floki
+# Date created: 03/04/2021
+# Description: Shutdown the PC and reboot it from wakealarm
+# Date Modified: 03/04/2021
+
+echo 0 > /sys/class/rtc/rtc0/wakealarm
+echo `date '+%s' -d '+ 720 minutes'` > /sys/class/rtc/rtc0/wakealarm"
+sudo shutdown -h now
