@@ -1,0 +1,11 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 19/04/2021
+# Description: rename extension of a file
+
+old=.txt
+new=.new
+
+for f in *$old; do
+    mv $f ${f%$old}$new
+done
