@@ -1,0 +1,14 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 20/04/2021
+# Description: Print today's logging
+# Date Modified: 20/04/2021
+
+echo -n "Day? (e.g. Mon) : "
+read day
+echo -n "Month? (e.g. Aug) : "
+read month
+echo -n "Date?(e.g. 12) : "
+read date
+
+last | grep "$day $month $date"
