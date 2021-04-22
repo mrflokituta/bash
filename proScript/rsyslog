@@ -1,0 +1,12 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 22/04/2021
+# Description: Add logs to a temp file
+# Date Modified: 22/04/2021
+
+tail -fn0 /var/log/messages | while read line; do
+    echo $line | egrep -i "refused|invalid|error|fail|lost|shut|down|offline"
+        if [ $? = 0 ]; then
+        echo $line >> /tmp/fmessages
+        fi
+done

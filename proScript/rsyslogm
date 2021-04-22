@@ -1,0 +1,12 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 22/04/2021
+# Description: Mail logs
+# Date Modified: 22/04/2021
+
+systems="email@hotmail.com,mailto@email.com"
+
+if [ -s /tmp/filtered-messages ]; then
+    cat /tmp/filtered-messages | sort | uniq | mail -s "CHECK: Syslog Errors" $systems
+    rm /tmp/filtered-messages
+fi
